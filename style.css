@@ -1,0 +1,851 @@
+/* Modern Reset & CSS Variables */
+:root {
+    --primary: hsl(0, 0%, 10%); /* Dark Charcoal / Black */
+    --secondary: hsl(66, 79%, 49%); /* Bright Chartreuse Lime */
+    --dark: #1E293B; /* Modern Slate Grey */
+    --light: #F8FAFC; /* Clean off-white */
+    --white: #FFFFFF;
+    --gray: #4A4A4A;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero{
+    background-color: var(--gray);
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 4rem 0;
+}
+
+.text-center { 
+    text-align: center;
+}
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+.section-subtitle {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+/* Navigation Bar */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar a{
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.navbar img{
+    margin-left: -140px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: center;
+}
+.logo span {
+    color: var(--secondary);
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+.nav-links a:hover {
+    color: hsl(66, 79%, 49%);
+    border-bottom: 2px solid var(--secondary);
+}
+/* Mobile Menu Toggle button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+/* Hero Section */
+.hero{
+    color: var(--white);
+    padding: 8rem 5% 10rem;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 0%);
+    text-shadow: 1px 1px 2px #4A4A4A;
+    justify-content: space-between;
+}
+
+.hero img{
+    width: 100%;
+    height: 768px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    background-clip: border-box;
+    margin-top: -30px;
+    border-radius: 20px;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    color: var(--light)
+}
+.hero p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+    color: var(--light);
+}
+.slogan {
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--light);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+.btn {
+    display: inline-block;
+    background-color: hsl(0, 0%, 29%);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: var(--transition);
+    margin-top: 20px;
+    margin-bottom: -10rem;
+}
+.btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+/* Overview / About */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: -50px;
+}
+.about-text h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about-text h2 {
+    margin-top: -50px;
+}
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.mv-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--secondary);
+}
+.mv-card h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+/* Products & Services */
+.services {
+    background-color: var(--white);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-left: 20px;
+}
+.service-card {
+    display: block;
+    background-color: var(--dark);
+    padding: 1em;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.service-card button{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0.5em;
+    background-color: var(--secondary);
+    left: 30px;
+    transform: translateX(-50px);
+}
+
+.service-card button:hover{
+    padding: 11px;
+    color: var(--gray);
+}
+
+.service-card1 {
+    background-color: var(--dark);
+    background-size: contain;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+    color: var(--light);
+    margin-top: 2px;
+    transform: translateX(50%); 
+    margin-left: -30%;
+    margin-right: 50%;
+    width: 100%;
+    padding: 25px 50px;
+} 
+
+.service-card1 #fac{
+    border-radius: 20px;
+}
+
+.service-card1 h1{
+    color: var(--secondary);
+}
+.service-card3 {
+    background-color: var(--dark);
+    background-size: cover;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+    color: var(--light);
+    margin-left: 20px;
+}        
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-top-color: var(--secondary);
+}
+.service-card3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-top-color: var(--secondary);
+}
+.service-card h3 {
+    color: var(--light);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.service-card3 h1{
+    color: var(--secondary);
+}
+.service-card ul {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+.service-card ul li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--light);
+}
+.service-card ul li::before {
+    content: "•";
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+/* Experience & Projects */
+.projects-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.timeline-section h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 0.5rem;
+}
+.project-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--secondary);
+}
+.project-card.current {
+    border-left-color: #E11D48; /* Red highlight for active */
+    background-color: #FFF1F2;
+}
+.project-card h4 {
+    color: var(--dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.project-card span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+}
+/* Why Choose Us & HSE */
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+/* Contact Details */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+.contact-info h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.contact-item strong {
+    color: var(--dark);
+    min-width: 120px;
+}
+.Contact-info{
+    margin-left: 20px;
+}
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 3rem 5% 1.5rem;
+    text-align: center;
+}
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.footer-logo span { color: var(--secondary); }
+.footer-slogan {
+    font-style: italic;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+.Contact-info {
+    background-color: var(--dark);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+    color: var(--light);
+}
+.Contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-top-color: var(--secondary);
+}
+.Contact-info h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    text-align: center;
+}
+.Form{
+    position: relative;
+    width: 420px;
+    height: 100%;
+    background-color: var(--secondary);
+    padding: 20px 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 0px 0px 30px var(--dark);
+    align-items: center;
+    top: 20px;
+    }
+    
+    .formbox label, input, textarea{
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        width: 50%;
+    }
+    
+    .Form button{
+        margin-top: 20px;
+        border-radius: 10px;
+        padding: 5px 20px;
+    }
+
+    .Form button:hover{
+        background-color: var(--dark);
+        padding: 6px 26px;
+        color: white;
+    }
+    
+    .Form textarea::placeholder{
+        color: var(--dark);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    #closeQ{
+        position: absolute;
+        top: -20px;
+        left: 260px;
+        width: 30px;
+        height: 32px;
+        background-color: var(--dark);
+        color: white;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+        padding: 0px 35px;
+    }
+
+    #closeQ a{
+        text-decoration: none;
+        margin-left: -15px;
+        color: white;
+    }
+
+    #closeQ:hover{
+        background-color: var(--dark);
+        color: red;
+        padding: 8px 35px;
+        text-align: center;
+    }
+
+    .formbox #closeQ a:hover{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    color: red;
+    margin-left: -12px;}
+    
+/* Responsive Design */
+@media (max-width: 968px) {
+
+    .navbar {
+        padding: 0.75rem 5%;
+        margin-left: 30%;
+        height: auto;
+        gap: 0.5rem;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 12px;
+    }
+
+    .logo { font-size: 1.2rem;
+     }
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.2rem 0;}
+
+    .container {
+        padding: 2rem 0;
+    }   
+    .service-card1{
+        display: block;
+        margin-left: -40%;
+        transform: translateX(40%);
+    }
+
+    .service-card a{
+        top: 5px;
+    }
+    .service-card1 img{
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-left: -50%;
+        transform: translateX(50%);
+    }
+    .about-grid, .projects-timeline, .why-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .hero {
+        padding: 6rem 5% 7rem;
+        background-size: cover; /* Keeps background looking full on medium screens */
+    }
+    .hero img{
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .hero h1 { font-size: 2.3rem; }
+    .hero p { font-size: 1.1rem; }
+    /* Mobile Navigation Styling */
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 70px; /* Aligned right below the header height */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: left 0.4s ease;
+    }
+    .nav-links.active {
+        left: 0;
+    }
+    /* Hamburger Menu Icon Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    }
+    .service-card3 {
+        margin-top: 20px !important;
+    }
+    .service-card button{
+        text-decoration: none;
+        transform: translateX(70%);
+    }
+
+    .service-card button{
+        text-decoration: none;
+        color: black;
+    }
+
+    .service-card button a:hover{
+        color: var(--light);
+    }
+
+    .Form{
+        width: 420px;
+        height: 100%;
+        background-color: var(--secondary);
+        padding: 20px 10px;
+        border-radius: 20px;
+        margin-top: auto;
+        font-size: 20px;
+        box-shadow: 0px 0px 30px var(--dark);
+        align-items: center;
+    }
+
+    .Form .formbox label, input, textarea{
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .Form button{
+        margin-top: 20px;
+        border-radius: 10px;
+        padding: 5px 20px;
+    }
+
+    #closeQ{
+        position: absolute;
+        top: -20px;
+        left: 260px;
+        width: 30px;
+        height: 32px;
+        background-color: var(--dark);
+        color: white;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #closeQ:hover{
+        background-color: var(--dark);
+        color: red;
+        padding: 8px 35px;
+        text-align: center;
+    }
+
+    .Form button:hover{
+        background-color: var(--light)
+    }
+
+    .Form textarea::placeholder{
+        color: var(--dark);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.65rem 4%;
+    }
+    
+    .navbar a{
+        display: block;
+        margin: -20px 5px;
+    }
+
+    .navbar .menu-toggle{
+        margin: 0px 2px;
+        display: flex;
+        margin-right: 0px;
+    }
+
+    .logo { font-size: 1rem;}
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.35rem 0;
+    }
+    .hero h1 { font-size: 1.8rem; }
+    .section-title { font-size: 2rem; }
+    }   
+    /* Responsive Background Handling for Mobile Views */
+    .hero {
+        background-size: contain;
+        background-position: center;
+        padding: 4rem 5% 5rem;
+    }   
+
+    .services-grid button{
+        display: block;
+        transform: none;
+        margin: 0 auto;
+        margin-left: 50px;
+    }
+
+    .services-grid button a{
+        display: block;
+        transform: none;
+        margin: 0 auto;
+    }
+    .service-card1 img{
+        height: 100vh;
+    }
+    .mission-vision {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Enhanced styling block for the inline Facilities image */
+    .service-card1 img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        display: block;
+        margin-top: 1rem;
+    }
+    
+    .service-card1 ul {
+        grid-template-columns: 1fr !important;
+    }
+    .service-card button a{
+        text-decoration: none;
+        color: black;
+        top: -65px;
+        color: var(--dark);
+    }
+
+    .service-card button a:hover{
+        padding: 1px;
+        color: var(--light);
+    }
+
+    .Form{
+        position: relative;
+        width: 360px;
+        background-color: var(--secondary);
+        padding: 20px 10px;
+        border-radius: 20px;
+        margin-top: auto;
+        font-size: 20px;
+        box-shadow: 0px 0px 30px var(--dark);
+        align-items: center;
+    }
+
+    .Form .formbox label, input, textarea{
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        width: 50%;
+        padding: 4px;
+    }
+
+    .Form button{
+        transform: translateX(-20px);
+        margin-top: 20px;
+        border-radius: 10px;
+        margin-left: 50px;
+        color: var(--light);
+        background-color: var(--dark);
+    }
+
+    .Form button:hover{
+        color: var(--dark);
+        background-color: var(--light)
+    }
+
+    #closeQ{
+        position: absolute;
+        top: -20px;
+        left: 260px;
+        width: 30px;
+        height: 32px;
+        background-color: var(--dark);
+        color: white;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #closeQ:hover{
+        background-color: var(--dark);
+        color: red;
+        padding: 8px 35px;
+        text-align: center;
+    }
+
+    .Form button:hover{
+        background-color: var(--dark);
+        padding: 6px 20px;
+        color: red;
+    }
+
+    .Form textarea::placeholder{
+        color: var(--dark);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+
