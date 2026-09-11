@@ -552,21 +552,24 @@ footer {
         gap: 0.5rem;
         margin: 0 auto;
     }
-
     .navbar a{
         position: absolute;
         display: flex;
-        width: 50%;
+        width: 70%;
         height: 100%;
-        display: block;
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .logo { font-size: 1.2rem;
+        display: none;
      }
 
+    .logo span, .navbar a{
+        display: none;
+    }
+
     .navbar img{
-        margin: 0 -5px;
+        margin: 0 -15px;
         width: 50%;
         height: 50%;
     }
@@ -752,10 +755,18 @@ footer {
         left: 0;
     }    
 
-    .logo { font-size: 1rem;}
+    .logo { font-size: 1rem;
+            display: none;
+    }
+
+    .navbar a{
+        display: none;
+    }
     .nav-links a {
         font-size: 0.8rem;
         padding: 0.35rem 0;
+        display: block;
+        margin: 5px -30px;
     }
     .hero h1 { font-size: 1.8rem; }
     .section-title { font-size: 2rem; }
