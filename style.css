@@ -743,7 +743,7 @@ footer {
         transform: translateX(40%);
     }
 
-    .logo a, .logo span{
+    .logo, .logo span{
         display: none;
     }
 }
